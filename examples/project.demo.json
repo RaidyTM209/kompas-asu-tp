@@ -1,0 +1,120 @@
+{
+  "schema_version": 1,
+  "mode": "course",
+  "media": [
+    {
+      "id": "water",
+      "code": "W",
+      "name": "Вода (условный код примера)"
+    }
+  ],
+  "equipment": [
+    {
+      "id": "tank",
+      "name": "Бак"
+    },
+    {
+      "id": "out",
+      "name": "Выход"
+    }
+  ],
+  "pipelines": [
+    {
+      "id": "line",
+      "medium": "water",
+      "from": "tank",
+      "to": "out"
+    }
+  ],
+  "components": [
+    {
+      "id": "sensor0",
+      "tag": "1А",
+      "manufacturer": "DEMO",
+      "order_code": "EXAMPLE-01",
+      "name": "Учебная запись датчика",
+      "terminals": [
+        "+",
+        "-"
+      ],
+      "group": "automation",
+      "datasheet": "Демонстрация формата",
+      "selection_reason": "Тест группирования",
+      "offer": {
+        "supplier": "DEMO",
+        "source": "Тестовые данные",
+        "date": "2026-11-22",
+        "currency": "UAH",
+        "unit_price": null,
+        "status": "on_request",
+        "vat_status": "unknown",
+        "price_unit": "шт.",
+        "availability": "unknown"
+      }
+    },
+    {
+      "id": "sensor1",
+      "tag": "2А",
+      "manufacturer": "DEMO",
+      "order_code": "EXAMPLE-01",
+      "name": "Учебная запись датчика",
+      "terminals": [
+        "+",
+        "-"
+      ],
+      "group": "automation",
+      "datasheet": "Демонстрация формата",
+      "selection_reason": "Тест группирования",
+      "offer": {
+        "supplier": "DEMO",
+        "source": "Тестовые данные",
+        "date": "2026-11-22",
+        "currency": "UAH",
+        "unit_price": null,
+        "status": "on_request",
+        "vat_status": "unknown",
+        "price_unit": "шт.",
+        "availability": "unknown"
+      }
+    },
+    {
+      "id": "sensor2",
+      "tag": "3А",
+      "manufacturer": "DEMO",
+      "order_code": "EXAMPLE-01",
+      "name": "Учебная запись датчика",
+      "terminals": [
+        "+",
+        "-"
+      ],
+      "group": "automation",
+      "datasheet": "Демонстрация формата",
+      "selection_reason": "Тест группирования",
+      "offer": {
+        "supplier": "DEMO",
+        "source": "Тестовые данные",
+        "date": "2026-11-22",
+        "currency": "UAH",
+        "unit_price": null,
+        "status": "on_request",
+        "vat_status": "unknown",
+        "price_unit": "шт.",
+        "availability": "unknown"
+      }
+    }
+  ],
+  "materials": [],
+  "loops": [
+    {
+      "id": "control",
+      "function": "Проверка ссылок",
+      "members": [
+        "sensor0"
+      ]
+    }
+  ],
+  "connections": [],
+  "placement": [],
+  "labels": [],
+  "documents": []
+}

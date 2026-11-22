@@ -1,0 +1,465 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "const": 1
+    },
+    "mode": {
+      "enum": [
+        "course",
+        "diploma"
+      ]
+    },
+    "media": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "code": {
+            "type": "string",
+            "minLength": 1
+          },
+          "name": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "id",
+          "code",
+          "name"
+        ]
+      }
+    },
+    "equipment": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "name": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "id",
+          "name"
+        ]
+      }
+    },
+    "pipelines": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "medium": {
+            "type": "string",
+            "minLength": 1
+          },
+          "from": {
+            "type": "string",
+            "minLength": 1
+          },
+          "to": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "id",
+          "medium",
+          "from",
+          "to"
+        ]
+      }
+    },
+    "components": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "tag": {
+            "type": "string",
+            "minLength": 1
+          },
+          "manufacturer": {
+            "type": "string",
+            "minLength": 1
+          },
+          "order_code": {
+            "type": "string",
+            "minLength": 1
+          },
+          "name": {
+            "type": "string",
+            "minLength": 1
+          },
+          "group": {
+            "enum": [
+              "automation",
+              "installation"
+            ]
+          },
+          "terminals": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "datasheet": {
+            "type": "string",
+            "minLength": 1
+          },
+          "selection_reason": {
+            "type": "string",
+            "minLength": 1
+          },
+          "offer": {
+            "type": "object",
+            "properties": {
+              "supplier": {
+                "type": "string",
+                "minLength": 1
+              },
+              "source": {
+                "type": "string",
+                "minLength": 1
+              },
+              "date": {
+                "type": "string",
+                "format": "date"
+              },
+              "currency": {
+                "type": "string",
+                "minLength": 1
+              },
+              "unit_price": {
+                "type": [
+                  "number",
+                  "null"
+                ],
+                "minimum": 0
+              },
+              "status": {
+                "enum": [
+                  "quoted",
+                  "on_request"
+                ]
+              },
+              "vat_status": {
+                "type": "string",
+                "minLength": 1
+              },
+              "price_unit": {
+                "type": "string",
+                "minLength": 1
+              },
+              "availability": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "required": [
+              "supplier",
+              "source",
+              "date",
+              "currency",
+              "unit_price",
+              "status",
+              "vat_status",
+              "price_unit",
+              "availability"
+            ]
+          }
+        },
+        "required": [
+          "id",
+          "tag",
+          "manufacturer",
+          "order_code",
+          "name",
+          "group",
+          "terminals",
+          "datasheet",
+          "selection_reason",
+          "offer"
+        ]
+      }
+    },
+    "materials": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "manufacturer": {
+            "type": "string",
+            "minLength": 1
+          },
+          "order_code": {
+            "type": "string",
+            "minLength": 1
+          },
+          "name": {
+            "type": "string",
+            "minLength": 1
+          },
+          "unit": {
+            "type": "string",
+            "minLength": 1
+          },
+          "quantity": {
+            "type": "number",
+            "exclusiveMinimum": 0
+          },
+          "basis": {
+            "type": "string",
+            "minLength": 1
+          },
+          "offer": {
+            "type": "object",
+            "properties": {
+              "supplier": {
+                "type": "string",
+                "minLength": 1
+              },
+              "source": {
+                "type": "string",
+                "minLength": 1
+              },
+              "date": {
+                "type": "string",
+                "format": "date"
+              },
+              "currency": {
+                "type": "string",
+                "minLength": 1
+              },
+              "unit_price": {
+                "type": [
+                  "number",
+                  "null"
+                ],
+                "minimum": 0
+              },
+              "status": {
+                "enum": [
+                  "quoted",
+                  "on_request"
+                ]
+              },
+              "vat_status": {
+                "type": "string",
+                "minLength": 1
+              },
+              "price_unit": {
+                "type": "string",
+                "minLength": 1
+              },
+              "availability": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "required": [
+              "supplier",
+              "source",
+              "date",
+              "currency",
+              "unit_price",
+              "status",
+              "vat_status",
+              "price_unit",
+              "availability"
+            ]
+          }
+        },
+        "required": [
+          "id",
+          "manufacturer",
+          "order_code",
+          "name",
+          "unit",
+          "quantity",
+          "basis",
+          "offer"
+        ]
+      }
+    },
+    "loops": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "function": {
+            "type": "string",
+            "minLength": 1
+          },
+          "members": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "minItems": 1
+          }
+        },
+        "required": [
+          "id",
+          "function",
+          "members"
+        ]
+      }
+    },
+    "connections": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "from": {
+            "type": "object",
+            "properties": {
+              "component": {
+                "type": "string",
+                "minLength": 1
+              },
+              "terminal": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "required": [
+              "component",
+              "terminal"
+            ]
+          },
+          "to": {
+            "type": "object",
+            "properties": {
+              "component": {
+                "type": "string",
+                "minLength": 1
+              },
+              "terminal": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "required": [
+              "component",
+              "terminal"
+            ]
+          }
+        },
+        "required": [
+          "id",
+          "from",
+          "to"
+        ]
+      }
+    },
+    "placement": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "component": {
+            "type": "string",
+            "minLength": 1
+          },
+          "panel": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "component",
+          "panel"
+        ]
+      }
+    },
+    "labels": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "component": {
+            "type": "string",
+            "minLength": 1
+          },
+          "text": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "component",
+          "text"
+        ]
+      }
+    },
+    "documents": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "kind": {
+            "type": "string",
+            "minLength": 1
+          },
+          "path": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "kind",
+          "path"
+        ]
+      }
+    }
+  },
+  "required": [
+    "schema_version",
+    "mode",
+    "media",
+    "equipment",
+    "pipelines",
+    "components",
+    "materials",
+    "loops",
+    "connections",
+    "placement",
+    "labels",
+    "documents"
+  ]
+}
